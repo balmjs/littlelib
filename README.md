@@ -61,8 +61,17 @@ Dom对象扩展
 
 ### 子元素查找
 
-    var span = div.Q('span');    // span = div.querySelector('span')
-    var spanList = div.QA('span')    // span = div.querySelectorAll('span')
+    var span = div.Q('span');       // span = div.querySelector('span')
+    var spanList = div.QA('span');  // span = div.querySelectorAll('span')
+
+### 属性操作(gas && data)
+    var dataId = div.gas('data-id'); // elem.gas = elem.getAttribute
+    //或者
+    var dataId = div.data('id');
+    //如果是类似'data-xxx-id'这种格式, 使用data('xxx-id'), 请不要写成驼峰
+    //太懒了, 不想为一个'-'写几行代码, -_-
+    
+
 ### animation方法(css3动画,配合[animate.css](http://daneden.github.io/animate.css/)使用)
     div.animation({
         name: ''              //animate.css 动画名称
