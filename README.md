@@ -74,13 +74,13 @@ Dom对象扩展
 
 ### animation方法(css3动画,配合[animate.css](http://daneden.github.io/animate.css/)使用)
     div.animation({
-        name: ''              //animate.css 动画名称
-        duration: 1.5         //动画持续1.5s(如果不写默认为1s)
-        delay: 1              //延迟1s(默认为没有延迟)
-        count: 2              //动画播放2次 (也可以传字符串'infinite'无限播放)
-        direction: 'normal'   //是否需要逆向播放 ('normal', 'alternate')
+        name: '',              //animate.css 动画名称
+        duration: 1.5,         //动画持续1.5s(如果不写默认为1s)
+        delay: 1,              //延迟1s(默认为没有延迟)
+        count: 2,              //动画播放2次 (也可以传字符串'infinite'无限播放)
+        direction: 'normal',   //是否需要逆向播放 ('normal', 'alternate')
         fn:function(){
-            console.log(this) //动画执行完毕时的回调, this指向当前Dom元素
+            console.log(this); //动画执行完毕时的回调, this指向当前Dom元素
         }
     });
 
