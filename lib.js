@@ -16,7 +16,7 @@
     return toString.call(everything).replace('[object ', '').replace(']', '').toLowerCase();
   };
 
-  window.isFuction = function(fn) {
+  window.isFunction = function(fn) {
     return getType(fn) === 'function';
   };
 
@@ -31,12 +31,6 @@
   window.isBoolean = function(boolean) {
     return getType(boolean) === 'boolean';
   };
-
-  if (!Element.prototype.contains) {
-    Element.prototype.contains = function(element) {
-      return this.compareDocumentPosition(element) > 19;
-    };
-  }
 
   Element.prototype.on = function(event, callback, capte) {
     return this.addEventListener(event, callback, isBoolean(capte) ? capte : false);
