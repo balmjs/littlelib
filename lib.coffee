@@ -9,7 +9,7 @@ toString = Object::toString
 window.getType = (everything) ->
 	toString.call(everything).replace('[object ', '').replace(']', '').toLowerCase()
 
-window.isFuction = (fn) ->
+window.isFunction = (fn) ->
 	getType(fn) is 'function'
 
 window.isArray = (arr) ->
@@ -22,11 +22,6 @@ window.isBoolean = (boolean) ->
 	getType(boolean) is 'boolean'
 
 #扩展区
-
-if not Element::contains
-	Element::contains = (element)->
-		@compareDocumentPosition(element) > 19
-
 Element::on = (event, callback, capte) ->
 	@addEventListener(event, callback, if isBoolean(capte) then capte else no)
 
