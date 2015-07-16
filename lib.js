@@ -91,7 +91,7 @@
       this.removeClass('animated');
       this.removeClass(opts.name);
       this.isAnimating = false;
-      if (isFuction(opts.fn)) {
+      if (isFunction(opts.fn)) {
         opts.fn.call(this);
       }
       this.off('webkitAnimationEnd', h, false);
