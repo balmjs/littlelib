@@ -63,7 +63,7 @@ Element::animation = (opts) ->
 		@removeClass('animated')
 		@removeClass(opts.name)
 		@isAnimating = no
-		if isFuction(opts.fn)
+		if isFunction(opts.fn)
 			opts.fn.call(@)
 		@off('webkitAnimationEnd', h, no)
 		@off('animationend', h, no)
