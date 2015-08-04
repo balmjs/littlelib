@@ -95,5 +95,43 @@ ajax方法(queryData)
 needJson默认为true
 
 
+8月4日更新:
+----------
+Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
+    //html
+    <div id="a">
+        <div id="b" style="display:inline-block;">
+            <i>^_^</i>
+        </div>
+    </div>
+
+    //javascript
+    var A = D('a'), B = D('b');
+    console.log(A.contains(B)) // true
+
+    A.on('click',function(e){
+        var target = e.target;
+        if(target === B || B.contains(target)){
+            console.log('你肯定已经明白这种写法会用在什么地方.');
+        }
+    });
+
+Element新增了一个stopAnimation的方法, 用于停止元素正在进行的动画
+    //html
+    <div id="animator" style="width:10rem;height:10rem;background:lightseagreen;"></div>
+    <button>start Animation</button>
+    <button>stop Animation</button>
+
+    //javascript
+    var animator = D('animator'), playBtn = QA('button')[0], stopBtn = QA('button')[1];
+
+    playBtn.on('click',function(){
+       animator.animation({name:'fadeInRightBig', duration: 5}); //播放动画
+    });
+
+    stopBtn.on('click',function(){
+        animator.stopAnimation();   //停止正在播放的动画
+    });
+
 
 
