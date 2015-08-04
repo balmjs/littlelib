@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>littlelib</title>
+    <link rel="stylesheet" href="animate.min.css">
+</head>
+<body>
+<div id="animator" style="width:10rem;height:10rem;background:lightseagreen;"></div>
+<button>start Animation</button>
+<button>stop Animation</button>
+<script></script>
+<script src="lib.min.js"></script>
+<script>
+    var animator = D('animator'), playBtn = QA('button')[0], stopBtn = QA('button')[1];
+    playBtn.on('click',function(){
+        animator.animation({name:'fadeInRightBig', duration: 5});
+    });
+    stopBtn.on('click',function(){
+        animator.stopAnimation();
+    });
+</script>
+</body>
+</html>
