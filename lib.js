@@ -50,8 +50,24 @@
     return this.querySelectorAll(selector);
   };
 
+  if (!Element.prototype.contains) {
+    Element.prototype.contains = function(node) {
+      return this.compareDocumentPosition(node) > 19;
+    };
+  }
+
   Element.prototype.removeClass = function(className) {
     this.classList.remove(className);
+    return this;
+  };
+
+  Element.prototype.stopAnimation = function() {
+    if (this.isAnimating === true) {
+      this.isAnimating = false;
+      this.removeClass('animated');
+      this.removeClass(this.animationName);
+      this.animationName = null;
+    }
     return this;
   };
 
@@ -91,6 +107,7 @@
       this.removeClass('animated');
       this.removeClass(opts.name);
       this.isAnimating = false;
+      this.animationName = null;
       if (isFunction(opts.fn)) {
         opts.fn.call(this);
       }
@@ -99,7 +116,8 @@
     };
     this.on('webkitAnimationEnd', h, false);
     this.on('animationend', h, false);
-    if (getType(opts.name) === 'string') {
+    this.animationName = opts.name;
+    if (getType(this.animationName) === 'string') {
       duration = opts.duration || 1;
       delay = getType(opts.delay) !== 'number' ? Number(opts.delay) : opts.delay;
       count = opts.count || 1;
@@ -184,3 +202,4 @@
 
 }).call(this);
 
+//# sourceMappingURL=lib.js.map
