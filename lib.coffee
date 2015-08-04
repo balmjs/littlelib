@@ -18,8 +18,8 @@ window.isArray = (arr) ->
 window.isString = (string) ->
 	getType(string) is 'string'
 
-window.isBoolean = (boolean) ->
-	getType(boolean) is 'boolean'
+window.isBoolean = (bl) ->
+	getType(bl) is 'boolean'
 
 #扩展区
 Element::on = (event, callback, capte) ->
@@ -73,7 +73,7 @@ Element::animation = (opts) ->
 
 	if getType(opts.name) is 'string'
 		duration = opts.duration or 1
-		delay = if getType(opts.delay) is 'number' then opts.delay else 0
+		delay = if getType(opts.delay) isnt 'number' then Number(opts.delay) else opts.delay
 		count = opts.count or 1
 		direction = opts.direction
 
@@ -98,7 +98,7 @@ Element::animation = (opts) ->
 				@style.animationDirection = direction
 				@style.webkitAnimationDirection = direction
 
-			if not (parseInt(count,10) is 1)
+			if count
 				@style.animationIterationCount = count
 				@style.webkitAnimationIterationCount = count
 

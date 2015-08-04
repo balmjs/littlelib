@@ -28,8 +28,8 @@
     return getType(string) === 'string';
   };
 
-  window.isBoolean = function(boolean) {
-    return getType(boolean) === 'boolean';
+  window.isBoolean = function(bl) {
+    return getType(bl) === 'boolean';
   };
 
   Element.prototype.on = function(event, callback, capte) {
@@ -101,7 +101,7 @@
     this.on('animationend', h, false);
     if (getType(opts.name) === 'string') {
       duration = opts.duration || 1;
-      delay = getType(opts.delay) === 'number' ? opts.delay : 0;
+      delay = getType(opts.delay) !== 'number' ? Number(opts.delay) : opts.delay;
       count = opts.count || 1;
       direction = opts.direction;
       if (!(getType(this.isAnimating) === 'boolean')) {
@@ -123,7 +123,7 @@
           this.style.animationDirection = direction;
           this.style.webkitAnimationDirection = direction;
         }
-        if (!(parseInt(count, 10) === 1)) {
+        if (count) {
           this.style.animationIterationCount = count;
           this.style.webkitAnimationIterationCount = count;
         }
@@ -184,4 +184,3 @@
 
 }).call(this);
 
-//# sourceMappingURL=lib.js.map
