@@ -36,9 +36,22 @@ Element::Q = (selector)->
 Element::QA = (selector)->
 	@querySelectorAll(selector)
 
+if not Element::contains
+	Element::contains = (node) ->
+		@compareDocumentPosition(node) > 19
+
 Element::removeClass = (className)->
 	@classList.remove(className);
 	@
+
+Element::stopAnimation = () ->
+	if @isAnimating is yes
+		@isAnimating = no
+		@removeClass('animated')
+		@removeClass(@animationName)
+		@animationName = null
+	@
+
 
 Element::addClass = (className)->
 	@classList.add(className);
@@ -63,6 +76,7 @@ Element::animation = (opts) ->
 		@removeClass('animated')
 		@removeClass(opts.name)
 		@isAnimating = no
+		@animationName = null
 		if isFunction(opts.fn)
 			opts.fn.call(@)
 		@off('webkitAnimationEnd', h, no)
@@ -71,7 +85,9 @@ Element::animation = (opts) ->
 	@on('webkitAnimationEnd', h, no)
 	@on('animationend', h, no)
 
-	if getType(opts.name) is 'string'
+	@animationName = opts.name
+
+	if getType(@animationName) is 'string'
 		duration = opts.duration or 1
 		delay = if getType(opts.delay) isnt 'number' then Number(opts.delay) else opts.delay
 		count = opts.count or 1
