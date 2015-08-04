@@ -98,7 +98,6 @@ needJson默认为true
 8月4日更新:
 ----------
 ### Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
--------------------------------------------------------------
     //html
     <div id="a">
         <div id="b" style="display:inline-block;">
@@ -118,7 +117,6 @@ needJson默认为true
     });
 
 ### Element新增了一个stopAnimation的方法, 用于停止元素正在进行的动画
----------------------------------------------------------------
     //html
     <div id="animator" style="width:10rem;height:10rem;background:lightseagreen;"></div>
     <button>start Animation</button>
