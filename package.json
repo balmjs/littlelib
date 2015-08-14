@@ -1,0 +1,21 @@
+{
+  "name": "littlelib",
+  "filename": "lib.min.js",
+  "version": "0.0.2",
+  "description": "nothing.just an attempt for jquery-free",
+  "main": "./lib.min.js",
+  "keywords": [
+    "littlelib"
+  ],
+  "maintainers": [
+    {
+      "name": "74sharlock",
+      "email": "905711341@qq.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/74sharlock/littlelib.git"
+  }
+
+}
