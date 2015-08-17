@@ -3,6 +3,8 @@ window.Q = document.querySelector.bind(document)
 window.D = document.getElementById.bind(document)
 window.QA = document.querySelectorAll.bind(document)
 window.CE = document.createElement.bind(document)
+window.R = (fn)->
+	document.addEventListener 'DOMContentLoaded', fn, no
 
 toString = Object::toString
 
