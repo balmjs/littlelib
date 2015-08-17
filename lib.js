@@ -10,6 +10,10 @@
 
   window.CE = document.createElement.bind(document);
 
+  window.R = function(fn) {
+    return document.addEventListener('DOMContentLoaded', fn, false);
+  };
+
   toString = Object.prototype.toString;
 
   window.getType = function(everything) {

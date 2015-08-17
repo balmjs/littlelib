@@ -13,12 +13,17 @@
 <script></script>
 <script src="lib.min.js"></script>
 <script>
-    var animator = D('animator'), playBtn = QA('button')[0], stopBtn = QA('button')[1];
-    playBtn.on('click',function(){
-        animator.animation({name:'fadeInRightBig', duration: 5});
+    R(function(){
+        var animator = D('animator'), playBtn = QA('button')[0], stopBtn = QA('button')[1];
+        playBtn.on('click',function(){
+            animator.animation({name:'fadeInRightBig', duration: 5});
+        });
+        stopBtn.on('click',function(){
+            animator.stopAnimation();
+        });
     });
-    stopBtn.on('click',function(){
-        animator.stopAnimation();
+    R(function(){
+        alert('yes, it works!');
     });
 </script>
 </body>
