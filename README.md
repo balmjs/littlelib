@@ -95,8 +95,8 @@ ajax方法(queryData)
 needJson默认为true
 
 
-8月4日更新:
-----------
+(v0.0.2)8月4日更新:
+------------------
 ### Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
     //html
     <div id="a">
@@ -131,6 +131,22 @@ needJson默认为true
 
     stopBtn.on('click',function(){
         animator.stopAnimation();   //停止正在播放的动画
+    });
+    
+(v0.0.3)8月17日更新:
+-------------------
+### window下新增了一个R方法, 用于代替window.onload:
+    //javascript
+    R(function(){
+        alert('这是一个方法.');
+    });
+    
+    R(function(){
+        alert('这是另一个方法.');
+    });
+    
+    R(function(){
+        alert('我们会在dom节点加载完成后立刻执行!');
     });
 
 
