@@ -1,5 +1,4 @@
 # littlelib
-***
 
 简单的javascript库, 基于原生对象的扩展, 兼容IE10/IE11/Chrome/Opera/Firefox/Safari等现代浏览器.适用于移动端.
 <br>
@@ -8,7 +7,6 @@
 > 依赖: [animate.css](http://daneden.github.io/animate.css/)
 
 ## 对象类型判断
-***
 
 getType(): 返回对象的类型(string, 小写)
 <br>
@@ -21,7 +19,6 @@ isString(): 是否是字符串
 isBoolean(): 是否是布尔值
 
 ## Dom操作
-***
 
 Q 等同于 document.querySelector
 <br>
@@ -32,7 +29,6 @@ D 等同于 document.getElementById
 CE 等同于 docuemnt.createElement
 
 ## Dom对象扩展
-***
 
     var div = D('div1');
     var h = function(){
@@ -90,7 +86,6 @@ CE 等同于 docuemnt.createElement
     });
 
 ## ajax方法(queryData)
-***
 
 参数: url, data, method, callback, needJson 
 <br>
@@ -102,7 +97,6 @@ needJson默认为true
 
 
 ## (v0.0.2)8月4日更新:
-***
 
 ### Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
     //html
@@ -141,7 +135,6 @@ needJson默认为true
     });
     
 ## (v0.0.3)8月17日更新:
-***
 
 ### window下新增了一个R方法, 用于代替window.onload:
     //javascript
