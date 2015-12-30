@@ -1,12 +1,15 @@
 # littlelib
+***
+
 简单的javascript库, 基于原生对象的扩展, 兼容IE10/IE11/Chrome/Opera/Firefox/Safari等现代浏览器.适用于移动端.
 <br>
 尝试下jQuery-free吧!
 <br>
 > 依赖: [animate.css](http://daneden.github.io/animate.css/)
 
-对象类型判断
+## 对象类型判断
 ------------
+
 getType(): 返回对象的类型(string, 小写)
 <br>
 isFunction(): 是否是函数
@@ -17,8 +20,9 @@ isString(): 是否是字符串
 <br>
 isBoolean(): 是否是布尔值
 
-Dom操作
+## Dom操作
 -------
+
 Q 等同于 document.querySelector
 <br>
 QA 等同于 document.querySelectorAll
@@ -27,8 +31,9 @@ D 等同于 document.getElementById
 <br>
 CE 等同于 docuemnt.createElement
 
-Dom对象扩展
+## Dom对象扩展
 ----------
+
     var div = D('div1');
     var h = function(){
       alert('ok');
@@ -84,8 +89,9 @@ Dom对象扩展
         }
     });
 
-ajax方法(queryData)
+## ajax方法(queryData)
 ------------------
+
 参数: url, data, method, callback, needJson 
 <br>
 默认post传递数据, method可以不写
@@ -95,8 +101,9 @@ ajax方法(queryData)
 needJson默认为true
 
 
-(v0.0.2)8月4日更新:
+## (v0.0.2)8月4日更新:
 ------------------
+
 ### Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
     //html
     <div id="a">
@@ -133,8 +140,9 @@ needJson默认为true
         animator.stopAnimation();   //停止正在播放的动画
     });
     
-(v0.0.3)8月17日更新:
+## (v0.0.3)8月17日更新:
 -------------------
+
 ### window下新增了一个R方法, 用于代替window.onload:
     //javascript
     R(function(){
