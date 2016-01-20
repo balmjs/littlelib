@@ -4,7 +4,7 @@
   "main": "./lib.js",
   "author": {
     "name": "74sharlock",
-    "email": "905711341@qq.com"
+    "email": "2220106810@qq.com"
   },
   "repository": {
     "type": "git",
@@ -12,5 +12,6 @@
   },
   "ignore": [],
   "dependencies": {
+    "animate.css": "~3.5.1"
   }
 }
