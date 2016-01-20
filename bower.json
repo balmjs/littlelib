@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/74sharlock/littlelib.git"
   },
-  "ignore": [],
+  "ignore": ["node_modules","bower_components",".idea"],
   "dependencies": {
     "animate.css": "~3.5.1"
   }
