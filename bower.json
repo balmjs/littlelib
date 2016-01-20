@@ -6,6 +6,7 @@
     "name": "74sharlock",
     "email": "2220106810@qq.com"
   },
+  "keywords": ["little lib", "littleLib", "littlelib"],
   "repository": {
     "type": "git",
     "url": "https://github.com/74sharlock/littlelib.git"
