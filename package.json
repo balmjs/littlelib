@@ -1,6 +1,5 @@
 {
   "name": "littlelib",
-  "filename": "lib.min.js",
   "version": "0.0.2",
   "description": "nothing.just an attempt for jquery-free",
   "main": "./lib.min.js",
