@@ -10,9 +10,10 @@
   "maintainers": [
     {
       "name": "74sharlock",
-      "email": "905711341@qq.com"
+      "email": "2220106810@qq.com"
     }
   ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/74sharlock/littlelib.git"
