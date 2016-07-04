@@ -96,7 +96,7 @@ CE 等同于 docuemnt.createElement
         }
     });
 
-## <s>ajax方法(queryData)</s>(已废弃, 使用全新的[ajax方法](https://github.com/74sharlock/littlelib#移除了querydata方法-现在由一个全新的名为ajax的方法代替-除此之外还新增了一个ajaxall的方法)代替)
+## <s>ajax方法(queryData)</s>(已废弃, 使用全新的[<b>ajax</b>方法](https://github.com/74sharlock/littlelib#移除了querydata方法-现在由一个全新的名为ajax的方法代替-除此之外还新增了一个ajaxall的方法)代替)
 
 <s>参数: url, data, method, callback, needJson
 <br>
@@ -138,9 +138,12 @@ lb.isBoolean(true) //yes
 
 ````
 
-###类型检测增加了isNull, isUndefined, isEmpty, isNumber, isObject等方法, 其中isEmpty用于检测变量是否是空数组([])或空对象({})或空字符串('')
-
-###移除了queryData方法, 现在由一个全新的名为ajax的方法代替. 除此之外还新增了一个ajaxAll的方法:
+类型检测增加了isNull, isUndefined, isEmpty, isNumber, isObject等方法, 其中isEmpty用于检测变量是否是空数组([])或空对象({})或空字符串('')
+<br>
+<br>
+<br>
+<br>
+移除了<b>queryData</b>方法, 现在由一个全新的名为<b>ajax</b>的方法代替. 除此之外还新增了一个ajaxAll的方法:
 ````javascript
 import {ajax} from 'littlelib';
 
