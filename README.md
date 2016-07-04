@@ -9,12 +9,12 @@
 ##安装方式
 ###bower:
 ````shell
-bower install littlelib
+bower install littlelib --save
 ````
 
 ###npm:
 ````shell
-npm install littlelib
+npm install littlelib --save
 ````
 ## 对象类型判断
 
