@@ -104,7 +104,7 @@ CE 等同于 docuemnt.createElement
 <br>
 回调callback的参数为后台响应数据, 默认转js对象字面量(json), 如果不需要请设置needJson为false
 <br>
-needJson默认为true<s>
+needJson默认为true</s>
 
 
 
