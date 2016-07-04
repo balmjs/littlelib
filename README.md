@@ -164,7 +164,7 @@ ajax('/api/xxx').save({id: 5}).then((data) =>{
 });
 ````
 
-ajax方法是多个异步请求同时发出, 全部结束时执行处理方法的解决方案, 避免了ajax回调方法的大坑:
+ajaxAll方法是多个异步请求同时发出, 全部结束时执行处理方法的解决方案, 避免了ajax回调方法的大坑:
 ````javascript
 import {ajaxAll} from 'littlelib';
 
