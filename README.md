@@ -179,7 +179,9 @@ ajaxAll(urls).done((dataList)=>{
 ````
 要使用不同的请求方法时, 请求路径的每一项需要是一个对象, 格式为:
 
-````javascript {path: 'xxx', method: 'post', data:{id:5}, async: true} ````
+````javascript
+{path: 'xxx', method: 'post', data:{id:5}, async: true}
+````
 
 其中path为必须字段, method默认值为'get', async(是否异步)默认为true.
 
