@@ -1,21 +1,25 @@
 {
   "name": "littlelib",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "nothing.just an attempt for jquery-free",
-  "main": "./lib.min.js",
+  "main": "./lib.js",
   "keywords": [
     "littlelib"
   ],
   "maintainers": [
-    {
-      "name": "74sharlock",
-      "email": "2220106810@qq.com"
-    }
+    "74sharlock <2220106810@qq.com>"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/74sharlock/littlelib.git"
-  }
-
+    "url": "git+https://github.com/74sharlock/littlelib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/74sharlock/littlelib/issues"
+  },
+  "homepage": "https://github.com/74sharlock/littlelib#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "74sharlock"
 }
