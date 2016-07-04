@@ -96,7 +96,7 @@ CE 等同于 docuemnt.createElement
         }
     });
 
-## <s>ajax方法(queryData)</s>(已废弃, 使用全新的[<b>ajax</b>方法](https://github.com/74sharlock/littlelib#移除了querydata方法-现在由一个全新的名为ajax的方法代替-除此之外还新增了一个ajaxall的方法)代替)
+## <s>ajax方法(queryData)</s>(已废弃, 使用全新的[<b>ajax</b>方法](#移除了querydata方法-现在由一个全新的名为ajax的方法代替-除此之外还新增了一个ajaxall的方法)代替)
 
 <s>参数: url, data, method, callback, needJson
 <br>
