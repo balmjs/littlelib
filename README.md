@@ -7,12 +7,16 @@
 > 依赖: [animate.css](http://daneden.github.io/animate.css/)
 
 ##安装方式
-bower: <br><code>bower install littlelib<code>
+###bower:
+````shell
+bower install littlelib
+````
 
-npm: <br>
-<code>npm install littlelib<code>
-
-### 对象类型判断
+###npm:
+````shell
+npm install littlelib
+````
+## 对象类型判断
 
 getType(): 返回对象的类型(string, 小写)
 <br>
@@ -24,7 +28,7 @@ isString(): 是否是字符串
 <br>
 isBoolean(): 是否是布尔值
 
-### Dom操作
+## Dom操作
 
 Q 等同于 document.querySelector
 <br>
@@ -34,14 +38,14 @@ D 等同于 document.getElementById
 <br>
 CE 等同于 docuemnt.createElement
 
-### Dom对象扩展
+## Dom对象扩展
 
     var div = D('div1');
     var h = function(){
       alert('ok');
     };
 
-#### 事件 (on, off)
+### 事件 (on, off)
     div.on('click', h);
     div.off('click', h);
     
@@ -51,7 +55,7 @@ CE 等同于 docuemnt.createElement
     someDivs.on('click', h);
     someDivs.off('click', h);
 
-#### addClass && removeClass && toggleClass && hasClass
+### addClass && removeClass && toggleClass && hasClass
     //增加className
     div.addClass('active');
     //移除一个ClassName(目前只能一次移除一个)
@@ -66,12 +70,12 @@ CE 等同于 docuemnt.createElement
     //也可以用链式操作(hasClass返回的是布尔值)
     div.addClass('active').removeClass('active').toggleClass('active');
 
-#### 子元素查找
+### 子元素查找
 
     var span = div.Q('span');       // span = div.querySelector('span')
     var spanList = div.QA('span');  // span = div.querySelectorAll('span')
 
-#### 属性操作(gas && data)
+### 属性操作(gas && data)
     var dataId = div.gas('data-id'); // elem.gas = elem.getAttribute
     //或者
     var dataId = div.data('id');
@@ -79,7 +83,7 @@ CE 等同于 docuemnt.createElement
     //太懒了, 不想为一个'-'写几行代码, -_-
     
 
-#### animation方法(css3动画,配合[animate.css](http://daneden.github.io/animate.css/)使用)
+### animation方法(css3动画,配合[animate.css](http://daneden.github.io/animate.css/)使用)
     div.animation({
         name: '',              //animate.css 动画名称
         duration: 1.5,         //动画持续1.5s(如果不写默认为1s)
@@ -91,7 +95,7 @@ CE 等同于 docuemnt.createElement
         }
     });
 
-### ajax方法(queryData)
+## ajax方法(queryData)
 
 参数: url, data, method, callback, needJson 
 <br>
@@ -103,10 +107,10 @@ needJson默认为true
 
 
 
-### (v0.0.4)2016年7月4日(for '74' in '74sharlock'!)
+## (v0.0.4)2016年7月4日(for '74' in '74sharlock'!)
 
-####在npm和bower上面都进行了注册, 现在可以分别使用bower和npm安装;
-####做了umd模块化处理, 现在小库支持各种模块化应用.页面直接引用时, 部分方法位于window的lb对象下.基于原型的扩展方法未改变
+###在npm和bower上面都进行了注册, 现在可以分别使用bower和npm安装;
+###做了umd模块化处理, 现在小库支持各种模块化应用.页面直接引用时, 部分方法位于window的lb对象下.基于原型的扩展方法未改变
 ````javascript
 //es6
 import lb from 'littlelib';
@@ -131,9 +135,9 @@ lb.isBoolean(true) //yes
 
 ````
 
-####类型检测增加了isNull, isUndefined, isEmpty, isNumber, isObject等方法, 其中isEmpty用于检测变量是否是空数组([])或空对象({})或空字符串('')
+###类型检测增加了isNull, isUndefined, isEmpty, isNumber, isObject等方法, 其中isEmpty用于检测变量是否是空数组([])或空对象({})或空字符串('')
 
-####移除了queryData方法, 现在由一个全新的名为ajax的方法代替. 除此之外还新增了一个ajaxAll的方法:
+###移除了queryData方法, 现在由一个全新的名为ajax的方法代替. 除此之外还新增了一个ajaxAll的方法:
 ````javascript
 import {ajax} from 'littlelib';
 
@@ -191,9 +195,9 @@ ajaxAll(anotherUrls).done((dataList)=>{
 
 
 
-### (v0.0.3)8月17日更新:
+## (v0.0.3)8月17日更新:
 
-#### window下新增了一个R方法, 用于代替window.onload:
+### window下新增了一个R方法, 用于代替window.onload:
     //javascript
     R(function(){
         alert('这是一个方法.');
@@ -208,9 +212,9 @@ ajaxAll(anotherUrls).done((dataList)=>{
     });
 
 
-### (v0.0.2)8月4日更新:
+## (v0.0.2)8月4日更新:
 
-#### Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
+### Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
     //html
     <div id="a">
         <div id="b" style="display:inline-block;">
@@ -229,7 +233,7 @@ ajaxAll(anotherUrls).done((dataList)=>{
         }
     });
 
-#### Element新增了一个stopAnimation的方法, 用于停止元素正在进行的动画
+### Element新增了一个stopAnimation的方法, 用于停止元素正在进行的动画
     //html
     <div id="animator" style="width:10rem;height:10rem;background:lightseagreen;"></div>
     <button>start Animation</button>
