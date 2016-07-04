@@ -96,22 +96,24 @@ CE 等同于 docuemnt.createElement
         }
     });
 
-## ajax方法(queryData)
+## <s>ajax方法(queryData)</s>(已废弃, 使用全新的[ajax方法](https://github.com/74sharlock/littlelib#移除了querydata方法-现在由一个全新的名为ajax的方法代替-除此之外还新增了一个ajaxall的方法)代替)
 
-参数: url, data, method, callback, needJson 
+<s>参数: url, data, method, callback, needJson
 <br>
 默认post传递数据, method可以不写
 <br>
 回调callback的参数为后台响应数据, 默认转js对象字面量(json), 如果不需要请设置needJson为false
 <br>
-needJson默认为true
+needJson默认为true<s>
 
 
 
 ## (v0.0.4)2016年7月4日(for '74' in '74sharlock'!)
 
-###在npm和bower上面都进行了注册, 现在可以分别使用bower和npm安装;
-###做了umd模块化处理, 现在小库支持各种模块化应用.页面直接引用时, 部分方法位于window的lb对象下.基于原型的扩展方法未改变
+在npm和bower上面都进行了注册, 现在可以分别使用bower和npm安装;
+<br>
+<br>
+做了umd模块化处理, 现在小库支持各种模块化应用.页面直接引用时, 部分方法位于window的lb对象下.基于原型的扩展方法未改变
 ````javascript
 //es6
 import lb from 'littlelib';
