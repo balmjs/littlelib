@@ -18,15 +18,16 @@ npm install littlelib --save
 ````
 ## 对象类型判断
 
-getType(): 返回对象的类型(string, 小写)
-<br>
-isFunction(): 是否是函数
-<br> 
-isArray(): 是否是数组
-<br>
-isString(): 是否是字符串
-<br>
-isBoolean(): 是否是布尔值
+* getType(): 返回对象的类型(string, 小写)
+* isFunction(): 是否是函数
+* isArray(): 是否是数组
+* isString(): 是否是字符串
+* isBoolean(): 是否是布尔值
+* isNumber(): 是否是数字
+* isObject(): 是否是对象
+* isNull(): 是否为Null
+* isUndefined(): 是否为undefined
+* isEmpty(): 是否为空数组([]), 空对象({}), 空字符串('')
 
 ## Dom操作
 
