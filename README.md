@@ -143,7 +143,7 @@ lb.isBoolean(true) //yes
 <br>
 <br>
 <br>
-移除了<b>queryData</b>方法, 现在由一个全新的名为<b>ajax</b>的方法代替. 除此之外还新增了一个ajaxAll的方法:
+#### 移除了<b>queryData</b>方法, 现在由一个全新的名为<b>ajax</b>的方法代替. 除此之外还新增了一个ajaxAll的方法:
 ````javascript
 import {ajax} from 'littlelib';
 
