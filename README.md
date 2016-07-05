@@ -8,12 +8,12 @@
 
 ##安装方式
 ###bower:
-````shell
+````
 bower install littlelib --save
 ````
 
 ###npm:
-````shell
+````
 npm install littlelib --save
 ````
 ## 对象类型判断
@@ -31,60 +31,62 @@ npm install littlelib --save
 
 ## Dom操作
 
-Q 等同于 document.querySelector
-<br>
-QA 等同于 document.querySelectorAll
-<br> 
-D 等同于 document.getElementById
-<br>
-CE 等同于 docuemnt.createElement
+* Q 等同于 document.querySelector
+* QA 等同于 document.querySelectorAll
+* D 等同于 document.getElementById
+* CE 等同于 docuemnt.createElement
 
 ## Dom对象扩展
-
+````javascript
     var div = D('div1');
     var h = function(){
       alert('ok');
     };
-
+````
 ### 事件 (on, off)
-    div.on('click', h);
-    div.off('click', h);
-    
-    //如果对象是一个NodeList, 依然可以用, 针对NodeList也做了扩展, 会为list中的每一个元素绑定事件
-    //但是请尽量避免使用这种方式, 以免过多监听影响性能
-    var someDivs = QA('div');
-    someDivs.on('click', h);
-    someDivs.off('click', h);
+````javascript
+div.on('click', h);
+div.off('click', h);
+
+//如果对象是一个NodeList, 依然可以用, 针对NodeList也做了扩展, 会为list中的每一个元素绑定事件
+//但是请尽量避免使用这种方式, 以免过多监听影响性能
+var someDivs = QA('div');
+someDivs.on('click', h);
+someDivs.off('click', h);
+````
 
 ### addClass && removeClass && toggleClass && hasClass
-    //增加className
-    div.addClass('active');
-    //移除一个ClassName(目前只能一次移除一个)
-    div.removeClass('active');
-    //切换className
-    div.toggleClass('active');
-    //检查是否拥有某个ClassName
-    if (div.hasClass('active')){
-        //do something
-    }
-    
-    //也可以用链式操作(hasClass返回的是布尔值)
-    div.addClass('active').removeClass('active').toggleClass('active');
+````javascript
+//增加className
+div.addClass('active');
+//移除一个ClassName(目前只能一次移除一个)
+div.removeClass('active');
+//切换className
+div.toggleClass('active');
+//检查是否拥有某个ClassName
+if (div.hasClass('active')){
+    //do something
+}
 
+//也可以用链式操作(hasClass返回的是布尔值)div.addClass('active').removeClass('active').toggleClass('active');
+````
 ### 子元素查找
-
+````javascript
     var span = div.Q('span');       // span = div.querySelector('span')
     var spanList = div.QA('span');  // span = div.querySelectorAll('span')
+````
 
 ### 属性操作(gas && data)
+````javascript
     var dataId = div.gas('data-id'); // elem.gas = elem.getAttribute
     //或者
     var dataId = div.data('id');
     //如果是类似'data-xxx-id'这种格式, 使用data('xxx-id'), 请不要写成驼峰
     //太懒了, 不想为一个'-'写几行代码, -_-
-    
+````
 
 ### animation方法(css3动画,配合[animate.css](http://daneden.github.io/animate.css/)使用)
+````javascript
     div.animation({
         name: '',              //animate.css 动画名称
         duration: 1.5,         //动画持续1.5s(如果不写默认为1s)
@@ -95,6 +97,7 @@ CE 等同于 docuemnt.createElement
             console.log(this); //动画执行完毕时的回调, this指向当前Dom元素
         }
     });
+````
 
 ## <s>ajax方法(queryData)</s>(已废弃, 使用全新的[<b>ajax</b>方法](#移除了querydata方法-现在由一个全新的名为ajax的方法代替-除此之外还新增了一个ajaxall的方法)代替)
 
@@ -206,7 +209,7 @@ ajaxAll(anotherUrls).done((dataList)=>{
 ## (v0.0.3)8月17日更新:
 
 ### window下新增了一个R方法, 用于代替window.onload:
-    //javascript
+````javascript
     R(function(){
         alert('这是一个方法.');
     });
@@ -218,43 +221,43 @@ ajaxAll(anotherUrls).done((dataList)=>{
     R(function(){
         alert('我们会在dom节点加载完成后立刻执行!');
     });
-
+````
 
 ## (v0.0.2)8月4日更新:
 
 ### Element新增了一个contains方法, 用于检测一个节点是否包含另一节点:
-    //html
-    <div id="a">
-        <div id="b" style="display:inline-block;">
-            <i>^_^</i>
-        </div>
+````html
+<div id="a">
+    <div id="b" style="display:inline-block;">
+        <i>^_^</i>
     </div>
+</div>
+````
+````javascript
+var A = D('a'), B = D('b');
+console.log(A.contains(B)) // true
 
-    //javascript
-    var A = D('a'), B = D('b');
-    console.log(A.contains(B)) // true
-
-    A.on('click',function(e){
-        var target = e.target;
-        if(target === B || B.contains(target)){
-            console.log('你肯定已经明白这种写法会用在什么地方.');
-        }
-    });
-
+A.on('click',function(e){
+    var target = e.target;
+    if(target === B || B.contains(target)){
+        console.log('你肯定已经明白这种写法会用在什么地方.');
+    }
+});
+````
 ### Element新增了一个stopAnimation的方法, 用于停止元素正在进行的动画
-    //html
-    <div id="animator" style="width:10rem;height:10rem;background:lightseagreen;"></div>
-    <button>start Animation</button>
-    <button>stop Animation</button>
+````html
+<div id="animator" style="width:10rem;height:10rem;background:lightseagreen;"></div>
+<button>start Animation</button>
+<button>stop Animation</button>
+````
+````javascript
+var animator = D('animator'), playBtn = QA('button')[0], stopBtn = QA('button')[1];
 
-    //javascript
-    var animator = D('animator'), playBtn = QA('button')[0], stopBtn = QA('button')[1];
+playBtn.on('click',function(){
+   animator.animation({name:'fadeInRightBig', duration: 5}); //播放动画
+});
 
-    playBtn.on('click',function(){
-       animator.animation({name:'fadeInRightBig', duration: 5}); //播放动画
-    });
-
-    stopBtn.on('click',function(){
-        animator.stopAnimation();   //停止正在播放的动画
-    });
-
+stopBtn.on('click',function(){
+    animator.stopAnimation();   //停止正在播放的动画
+});
+````
