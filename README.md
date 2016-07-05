@@ -18,7 +18,7 @@ npm install littlelib --save
 ````
 ## 对象类型判断
 
-* getType(): 返回对象的类型(string, 小写)
+* getType(): 返回对象的类型(如果传入多个参数,会返回一个类型的数组)
 * isFunction(): 是否是函数
 * isArray(): 是否是数组
 * isString(): 是否是字符串
@@ -38,10 +38,9 @@ npm install littlelib --save
 
 ## Dom对象扩展
 ````javascript
-    var div = D('div1');
-    var h = function(){
-      alert('ok');
-    };
+var div = D('div1');
+var h = function(){
+  alert('ok');};
 ````
 ### 事件 (on, off)
 ````javascript
@@ -72,31 +71,31 @@ if (div.hasClass('active')){
 ````
 ### 子元素查找
 ````javascript
-    var span = div.Q('span');       // span = div.querySelector('span')
-    var spanList = div.QA('span');  // span = div.querySelectorAll('span')
+var span = div.Q('span');       // span = div.querySelector('span')
+var spanList = div.QA('span');  // span = div.querySelectorAll('span')
 ````
 
 ### 属性操作(gas && data)
 ````javascript
-    var dataId = div.gas('data-id'); // elem.gas = elem.getAttribute
-    //或者
-    var dataId = div.data('id');
-    //如果是类似'data-xxx-id'这种格式, 使用data('xxx-id'), 请不要写成驼峰
-    //太懒了, 不想为一个'-'写几行代码, -_-
+var dataId = div.gas('data-id'); // elem.gas = elem.getAttribute
+//或者
+var dataId = div.data('id');
+//如果是类似'data-xxx-id'这种格式, 使用data('xxx-id'), 请不要写成驼峰
+//太懒了, 不想为一个'-'写几行代码, -_-
 ````
 
 ### animation方法(css3动画,配合[animate.css](http://daneden.github.io/animate.css/)使用)
 ````javascript
-    div.animation({
-        name: '',              //animate.css 动画名称
-        duration: 1.5,         //动画持续1.5s(如果不写默认为1s)
-        delay: 1,              //延迟1s(默认为没有延迟)
-        count: 2,              //动画播放2次 (也可以传字符串'infinite'无限播放)
-        direction: 'normal',   //是否需要逆向播放 ('normal', 'alternate')
-        fn:function(){
-            console.log(this); //动画执行完毕时的回调, this指向当前Dom元素
-        }
-    });
+div.animation({
+    name: '',              //animate.css 动画名称
+    duration: 1.5,         //动画持续1.5s(如果不写默认为1s)
+    delay: 1,              //延迟1s(默认为没有延迟)
+    count: 2,              //动画播放2次 (也可以传字符串'infinite'无限播放)
+    direction: 'normal',   //是否需要逆向播放 ('normal', 'alternate')
+    fn:function(){
+        console.log(this); //动画执行完毕时的回调, this指向当前Dom元素
+    }
+});
 ````
 
 ## <s>ajax方法(queryData)</s>(已废弃, 使用全新的[<b>ajax</b>方法](#移除了querydata方法-现在由一个全新的名为ajax的方法代替-除此之外还新增了一个ajaxall的方法)代替)
@@ -210,17 +209,17 @@ ajaxAll(anotherUrls).done((dataList)=>{
 
 ### window下新增了一个R方法, 用于代替window.onload:
 ````javascript
-    R(function(){
-        alert('这是一个方法.');
-    });
-    
-    R(function(){
-        alert('这是另一个方法.');
-    });
-    
-    R(function(){
-        alert('我们会在dom节点加载完成后立刻执行!');
-    });
+R(function(){
+    alert('这是一个方法.');
+});
+
+R(function(){
+    alert('这是另一个方法.');
+});
+
+R(function(){
+    alert('我们会在dom节点加载完成后立刻执行!');
+});
 ````
 
 ## (v0.0.2)8月4日更新:
