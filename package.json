@@ -1,6 +1,6 @@
 {
   "name": "littlelib",
-  "version": "0.0.4",
+  "version": "0.0.4r",
   "description": "nothing.just an attempt for jquery-free",
   "main": "./lib.js",
   "keywords": [
