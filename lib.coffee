@@ -174,7 +174,7 @@
     resolveCallback = noop
     rejectCallback = noop;
 
-    xhr.onload = ()-> resolveCallback and resolveCallback.apply(xhr, [if options.needJson isnt false then JSON.parse(xhr.responseText) else xhr.responseText]);
+    xhr.onload = ()-> resolveCallback and resolveCallback.apply(xhr, [if isObject(options) and (options.needJson isnt false) then JSON.parse(xhr.responseText) else xhr.responseText]);
 
     xhr.onerror = ()->
     rejectCallback and rejectCallback.apply(xhr)
