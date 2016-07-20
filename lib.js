@@ -192,13 +192,13 @@
       }
       return this;
     };
-    ajax = function(url) {
+    ajax = function(url, options) {
       var rejectCallback, resolveCallback, sendData, xhr;
       xhr = new XMLHttpRequest();
       resolveCallback = noop;
       rejectCallback = noop;
       xhr.onload = function() {
-        return resolveCallback && resolveCallback.apply(xhr, [isString(xhr.responseText) ? JSON.parse(xhr.responseText) : xhr.responseText]);
+        return resolveCallback && resolveCallback.apply(xhr, [options.needJson !== false ? (isString(xhr.responseText) ? JSON.parse(xhr.responseText) : xhr.responseText) : void 0]);
       };
       xhr.onerror = function() {};
       rejectCallback && rejectCallback.apply(xhr);

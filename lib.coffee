@@ -168,13 +168,13 @@
     elem.on(event, calback ,if isBoolean(capte) then capte else no) for elem in @
     @
 
-  ajax = (url)->
+  ajax = (url, options)->
 
     xhr = new XMLHttpRequest()
     resolveCallback = noop
     rejectCallback = noop;
 
-    xhr.onload = ()-> resolveCallback and resolveCallback.apply(xhr, [if isString(xhr.responseText) then JSON.parse(xhr.responseText) else xhr.responseText]);
+    xhr.onload = ()-> resolveCallback and resolveCallback.apply(xhr, [(if isString(xhr.responseText) then JSON.parse(xhr.responseText) else xhr.responseText) if options.needJson isnt false]);
 
     xhr.onerror = ()->
     rejectCallback and rejectCallback.apply(xhr)
