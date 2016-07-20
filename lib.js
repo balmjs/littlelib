@@ -198,7 +198,7 @@
       resolveCallback = noop;
       rejectCallback = noop;
       xhr.onload = function() {
-        return resolveCallback && resolveCallback.apply(xhr, [isObject(options) && options.needJson !== false ? JSON.parse(xhr.responseText) : xhr.responseText]);
+        return resolveCallback && resolveCallback.apply(xhr, [isObject(options) && options.needJson === false ? xhr.responseText : JSON.parse(xhr.responseText)]);
       };
       xhr.onerror = function() {};
       rejectCallback && rejectCallback.apply(xhr);
