@@ -18,7 +18,7 @@ npm install littlelib --save
 ````
 ## 对象类型判断
 
-* getType(): 返回对象的类型(如果传入多个参数,会返回一个类型的数组)
+* getType(): 返回对象的类型
 * isFunction(): 是否是函数
 * isArray(): 是否是数组
 * isString(): 是否是字符串

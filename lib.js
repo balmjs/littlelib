@@ -20,18 +20,8 @@
       return document.addEventListener('DOMContentLoaded', fn, false);
     };
     noop = function() {};
-    getType = function() {
-      var arr, l;
-      l = arguments.length;
-      arr = [];
-      [].forEach.call(arguments, function(arg) {
-        return arr.push({}.toString.call(arg).replace(/\[object\s(.*)\]/, '$1').toLowerCase());
-      });
-      if (l === 1) {
-        return arr[0];
-      } else {
-        return arr;
-      }
+    getType = function(everything) {
+      return {}.toString.call(everything).replace(/\[object\s(.*)\]/, '$1').toLowerCase();
     };
     isString = function(string) {
       return getType(string) === 'string';
@@ -56,9 +46,6 @@
     };
     isNull = function(n) {
       return getType(n) === 'null';
-    };
-    isArray = function(array) {
-      return getType(array) === 'array';
     };
     isEmpty = function(thing) {
       var rule, type;

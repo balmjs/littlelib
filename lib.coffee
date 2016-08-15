@@ -16,13 +16,8 @@
 
   noop = ()->
 
-  getType = () ->
-    l = arguments.length;
-    arr = [];
-    [].forEach.call(arguments, (arg)->
-      arr.push(({}).toString.call(arg).replace(/\[object\s(.*)\]/,'$1').toLowerCase())
-    )
-    if l is 1 then arr[0] else arr;
+  getType = (everything) ->
+    ({}).toString.call(everything).replace(/\[object\s(.*)\]/,'$1').toLowerCase()
 
   isString = (string)->
     getType(string) is 'string'
@@ -47,9 +42,6 @@
 
   isNull = (n)->
     getType(n) is 'null'
-
-  isArray = (array)->
-    getType(array) is 'array'
 
   isEmpty = (thing)->
     rule = {
